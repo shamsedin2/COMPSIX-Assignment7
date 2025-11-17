@@ -3,3 +3,34 @@ node_modules/
 *.sqlite
 *.sqlite3
 *.log
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Node modules
+node_modules/
+
+# Environment variables (Note: .env is typically excluded, but assignment says to include it)
+# .env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testing
+coverage/
+.nyc_output/
