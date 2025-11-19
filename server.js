@@ -13,10 +13,10 @@ app.use(express.json());
 // Connect to database when server starts
 sequelize.authenticate()
     .then(() => {
-        console.log('✅ Database connection established.');
+        console.log(' Database connection established.');
     })
     .catch(err => {
-        console.error('❌ Unable to connect to database:', err);
+        console.error(' Unable to connect to database:', err);
     });
 
 
@@ -216,15 +216,12 @@ app.delete('/api/tracks/:id', async (req, res) => {
     }
 });
 
-// ============================================
-// START SERVER
-// ============================================
 
 app.listen(PORT, () => {
     console.log(`\n🎵 Music Library API Server`);
     console.log(`================================`);
-    console.log(`🚀 Server running on http://localhost:${PORT}`);
-    console.log(`📚 API Endpoints:`);
+    console.log(` Server running on http://localhost:${PORT}`);
+    console.log(` API Endpoints:`);
     console.log(`   GET    /api/tracks       - Get all tracks`);
     console.log(`   GET    /api/tracks/:id   - Get track by ID`);
     console.log(`   POST   /api/tracks       - Create new track`);
@@ -359,4 +356,5 @@ if (require.main === module) {
 
 // Export sequelize instance and Track model for use in other files
 module.exports = { sequelize, Track };
+
 
