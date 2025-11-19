@@ -19,11 +19,7 @@ sequelize.authenticate()
         console.error('❌ Unable to connect to database:', err);
     });
 
-// ============================================
-// API ENDPOINTS
-// ============================================
 
-// GET /api/tracks - Get all tracks
 app.get('/api/tracks', async (req, res) => {
     try {
         // Find all tracks in the database
@@ -239,9 +235,9 @@ app.listen(PORT, () => {
 
 // Graceful shutdown
 process.on('SIGINT', async () => {
-    console.log('\n\n🛑 Shutting down gracefully...');
+    console.log('\n\n  Shutting down gracefully...');
     await sequelize.close();
-    console.log('✅ Database connection closed.');
+    console.log(' Database connection closed.');
     process.exit(0);
 });
 // Import required packages
@@ -338,20 +334,20 @@ async function initializeDatabase() {
     try {
         // Test the database connection
         await sequelize.authenticate();
-        console.log('✅ Database connection established successfully.');
+        console.log(' Database connection established successfully.');
 
         // Synchronize the model with the database
         // This creates the table if it doesn't exist
         await sequelize.sync({ force: false });
-        console.log('✅ Database tables synchronized successfully.');
+        console.log(' Database tables synchronized successfully.');
 
         // Close the connection
         await sequelize.close();
-        console.log('✅ Database connection closed.');
+        console.log('  Database connection closed.');
         console.log('\n🎵 Music library database is ready!');
 
     } catch (error) {
-        console.error('❌ Unable to connect to the database:', error);
+        console.error(' Unable to connect to the database:', error);
         process.exit(1);
     }
 }
@@ -363,3 +359,4 @@ if (require.main === module) {
 
 // Export sequelize instance and Track model for use in other files
 module.exports = { sequelize, Track };
+
